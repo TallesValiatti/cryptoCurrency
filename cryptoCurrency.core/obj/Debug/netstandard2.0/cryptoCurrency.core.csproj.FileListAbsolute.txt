@@ -1,0 +1,8 @@
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/bin/Debug/netstandard2.0/cryptoCurrency.core.deps.json
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/bin/Debug/netstandard2.0/cryptoCurrency.core.dll
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/bin/Debug/netstandard2.0/cryptoCurrency.core.pdb
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/Debug/netstandard2.0/cryptoCurrency.core.AssemblyInfoInputs.cache
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/Debug/netstandard2.0/cryptoCurrency.core.AssemblyInfo.cs
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/Debug/netstandard2.0/cryptoCurrency.core.dll
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/Debug/netstandard2.0/cryptoCurrency.core.pdb
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/Debug/netstandard2.0/cryptoCurrency.core.csprojAssemblyReference.cache

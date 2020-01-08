@@ -1,0 +1,13 @@
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.tasks.deps.json
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.tasks.dll
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.tasks.pdb
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.services.dll
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.services.pdb
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/Debug/netstandard2.0/cryptoCurrency.tasks.csprojAssemblyReference.cache
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/Debug/netstandard2.0/cryptoCurrency.tasks.AssemblyInfoInputs.cache
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/Debug/netstandard2.0/cryptoCurrency.tasks.AssemblyInfo.cs
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/Debug/netstandard2.0/cryptoCurrency.tasks.csproj.CopyComplete
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/Debug/netstandard2.0/cryptoCurrency.tasks.dll
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/Debug/netstandard2.0/cryptoCurrency.tasks.pdb
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.core.dll
+/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/bin/Debug/netstandard2.0/cryptoCurrency.core.pdb
