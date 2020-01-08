@@ -35,7 +35,7 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
 
                 var URL = "https://api.bitcointrade.com.br/v2/wallets/balance";
                 HttpClient request = new HttpClient();
-                request.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("ApiToken1",_Key);
+                request.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("ApiToken",_Key);
 
                 string strResult = await request.GetStringAsync(URL);
 
