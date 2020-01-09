@@ -6,7 +6,7 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
 {
     public interface IBitCoinTradeService
     {
-        void setKey(string key);
+        void SetKey(string key);
 
         Task<IDictionary<string, decimal>> getBalanceAsync();
     }

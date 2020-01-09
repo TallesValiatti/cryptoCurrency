@@ -1,13 +1,33 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{CA0B6243-8359-412F-B422-B910AFBDE2A8}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.worker/appsettings.json">
     <Files>
-      <File FileName="cryptoCurrency.services/Services/BitCoinTradeService/IBitCoinTradeService.cs" Line="1" Column="1" />
-      <File FileName="README.txt" Line="1" Column="11" />
+      <File FileName="cryptoCurrency.worker/appsettings.json" Line="10" Column="14" />
+      <File FileName="cryptoCurrency.worker/Worker.cs" Line="38" Column="36" />
+      <File FileName="cryptoCurrency.tasks/Tasks/MainTask.cs" Line="52" Column="1" />
+      <File FileName="cryptoCurrency.services/Services/NotifcationService/NotifcationService.cs" Line="46" Column="73" />
+      <File FileName="cryptoCurrency.services/Services/BitCoinTradeService/BitCoinTradeService.cs" Line="67" Column="1" />
+      <File FileName="cryptoCurrency.services/Services/GenericServices/GenericService.cs" Line="20" Column="1" />
+      <File FileName="cryptoCurrency.worker/Program.cs" Line="18" Column="1" />
+      <File FileName="cryptoCurrency.worker/Program.cs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="cryptoCurrency" expanded="True" selected="True" />
+          <Node name="cryptoCurrency" expanded="True">
+            <Node name="cryptoCurrency.services" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="BitCoinTradeService" expanded="True" />
+                <Node name="GenericServices" expanded="True" />
+                <Node name="NotifcationService" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="cryptoCurrency.tasks" expanded="True">
+              <Node name="Tasks" expanded="True" />
+            </Node>
+            <Node name="cryptoCurrency.worker" expanded="True">
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
@@ -15,7 +35,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/Services/NotifcationService/NotifcationService.cs" relfile="cryptoCurrency.services/Services/NotifcationService/NotifcationService.cs" line="53" column="27" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.cryptoCurrency.worker PreferredExecutionTarget="MonoDevelop.Default" />

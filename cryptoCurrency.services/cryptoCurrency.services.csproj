@@ -8,6 +8,7 @@
     <Folder Include="Services\" />
     <Folder Include="Services\BitCoinTradeService\" />
     <Folder Include="Services\GenericServices\" />
+    <Folder Include="Services\NotifcationService\" />
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>

@@ -59,10 +59,13 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
             return dict;
         }
 
-        public void setKey(string key)
+        public void SetKey(string Key)
         {
-            _logger.LogInformation("Setting key - {time}", DateTimeOffset.Now);
-            this._Key = key;
+            if (string.IsNullOrEmpty(Key))
+                throw new CoreException("Trade key empty or null");
+
+            _logger.LogInformation("Trade key - {time}", DateTimeOffset.Now);
+            this._Key = Key;
         }
         #endregion
 

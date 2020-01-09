@@ -32,16 +32,18 @@ namespace cryptoCurrency.worker
                 //bitcointrade key
 
                 var objData = new
-                { 
-                    key = _config.GetValue<string>("data:key"),
-                    threadTime = _config.GetValue<long>("data:threadTime"),
+                {
+                    TradeKey = _config.GetValue<string>("data:TradeKey"),
+                    ThreadTime = _config.GetValue<long>("data:ThreadTime"),
+                    NotificationKey = _config.GetValue<string>("data:NotificationKey")
+
                 };
 
                 //main tasks
-                _mainTask.ExecuteAsync(objData);
+                await _mainTask.ExecuteAsync(objData);
 
                 //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay((int)objData.threadTime, stoppingToken);
+                await Task.Delay((int)objData.ThreadTime, stoppingToken);
             }
         }
     }

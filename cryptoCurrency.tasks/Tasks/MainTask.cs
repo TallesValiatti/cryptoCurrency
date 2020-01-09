@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using cryptoCurrency.core.Exceptions;
 using cryptoCurrency.services.Services.BitCoinTradeService;
 using cryptoCurrency.services.Services.GenericServices;
+using cryptoCurrency.services.Services.NotifcationService;
 using Microsoft.Extensions.Logging;
 
 namespace cryptoCurrency.tasks.Tasks
@@ -13,6 +14,7 @@ namespace cryptoCurrency.tasks.Tasks
         private readonly ILogger<MainTask> _logger;
         private readonly IBitCoinTradeService _bitCoinTradeService;
         private readonly IGenericService _genericService;
+        private readonly INotificationService _notificationService;
         #endregion
 
         #region methods
@@ -20,12 +22,14 @@ namespace cryptoCurrency.tasks.Tasks
         public MainTask(
             ILogger<MainTask> logger,
             IBitCoinTradeService bitCoinTradeService,
-            IGenericService genericService
+            IGenericService genericService,
+            INotificationService notificationService
             )
         {
             this._logger = logger;
             this._bitCoinTradeService = bitCoinTradeService;
             this._genericService = genericService;
+            this._notificationService = notificationService;
         }
 
         public async Task ExecuteAsync(dynamic objData)
@@ -38,7 +42,10 @@ namespace cryptoCurrency.tasks.Tasks
                 _logger.LogInformation("Starting main task - {time}", DateTimeOffset.Now);
 
                 // set the private Key of the service BITCOIN TRADE
-                _bitCoinTradeService.setKey((string)_genericService.getObjectFromDynamic("key", objData));
+                _bitCoinTradeService.SetKey((string)_genericService.getObjectFromDynamic("TradeKey", objData));
+
+                // set the private key of notification service
+                _notificationService.SetKey((string)_genericService.getObjectFromDynamic("NotificationKey", objData));
 
                 //Get balance
                 var balance =  await _bitCoinTradeService.getBalanceAsync();
@@ -48,11 +55,13 @@ namespace cryptoCurrency.tasks.Tasks
             }
             catch (CoreException cex)
             {
-                _logger.LogError("CoreException - "+ cex.Message + " -{time}", DateTimeOffset.Now);
+                _logger.LogError("CoreException - " + cex.Message + " -{time}", DateTimeOffset.Now);
+                _notificationService.ErrorNotification(cex.Message);
             }
             catch(Exception ex)
             {
                 _logger.LogError("Exeception - " + ex.Message + " - {time}", DateTimeOffset.Now);
+                _notificationService.ErrorNotification(ex.Message);
             }
         }
 

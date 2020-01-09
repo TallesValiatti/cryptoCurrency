@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using cryptoCurrency.services.Services.BitCoinTradeService;
 using cryptoCurrency.services.Services.GenericServices;
+using cryptoCurrency.services.Services.NotifcationService;
 using cryptoCurrency.tasks.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,6 +23,7 @@ namespace cryptoCurrency.worker
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddScoped<IMainTask, MainTask>();
+                    services.AddScoped<INotificationService, NotifcationService>();
                     services.AddScoped<IBitCoinTradeService, BitCoinTradeService>();
                     services.AddScoped<IGenericService, GenericService>();
                     services.AddHostedService<Worker>();
