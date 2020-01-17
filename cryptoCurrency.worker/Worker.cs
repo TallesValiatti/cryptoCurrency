@@ -35,8 +35,8 @@ namespace cryptoCurrency.worker
                 {
                     TradeKey = _config.GetValue<string>("data:TradeKey"),
                     ThreadTime = _config.GetValue<long>("data:ThreadTime"),
-                    NotificationKey = _config.GetValue<string>("data:NotificationKey")
-
+                    NotificationKey = _config.GetValue<string>("data:NotificationKey"),
+                    EnumCryptoCurrencyType = _config.GetValue<string>("data:EnumCryptoCurrencyType")
                 };
 
                 //main tasks

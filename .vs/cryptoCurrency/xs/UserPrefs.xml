@@ -1,14 +1,9 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{CA0B6243-8359-412F-B422-B910AFBDE2A8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.worker/appsettings.json">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.services/Services/CryptoCurrencyService/ICryptoCurrencyService.cs">
     <Files>
-      <File FileName="cryptoCurrency.worker/appsettings.json" Line="10" Column="14" />
-      <File FileName="cryptoCurrency.worker/Worker.cs" Line="38" Column="36" />
-      <File FileName="cryptoCurrency.tasks/Tasks/MainTask.cs" Line="52" Column="1" />
-      <File FileName="cryptoCurrency.services/Services/NotifcationService/NotifcationService.cs" Line="46" Column="73" />
-      <File FileName="cryptoCurrency.services/Services/BitCoinTradeService/BitCoinTradeService.cs" Line="67" Column="1" />
-      <File FileName="cryptoCurrency.services/Services/GenericServices/GenericService.cs" Line="20" Column="1" />
-      <File FileName="cryptoCurrency.worker/Program.cs" Line="18" Column="1" />
-      <File FileName="cryptoCurrency.worker/Program.cs" Line="18" Column="1" />
+      <File FileName="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" Line="99" Column="1" />
+      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" Line="14" Column="51" />
+      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/ICryptoCurrencyService.cs" Line="14" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,27 +11,26 @@
           <Node name="cryptoCurrency" expanded="True">
             <Node name="cryptoCurrency.services" expanded="True">
               <Node name="Services" expanded="True">
-                <Node name="BitCoinTradeService" expanded="True" />
-                <Node name="GenericServices" expanded="True" />
-                <Node name="NotifcationService" expanded="True" />
+                <Node name="CryptoCurrencyService" expanded="True">
+                  <Node name="ICryptoCurrencyService.cs" selected="True" />
+                </Node>
+                <Node name="DecisonMakerService" expanded="True" />
               </Node>
-            </Node>
-            <Node name="cryptoCurrency.tasks" expanded="True">
-              <Node name="Tasks" expanded="True" />
-            </Node>
-            <Node name="cryptoCurrency.worker" expanded="True">
-              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
+    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
+    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/Services/NotifcationService/NotifcationService.cs" relfile="cryptoCurrency.services/Services/NotifcationService/NotifcationService.cs" line="53" column="27" />
+      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" relfile="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="95" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

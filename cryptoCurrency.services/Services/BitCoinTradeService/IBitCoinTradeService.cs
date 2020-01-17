@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using cryptoCurrency.core.Enums;
 
 namespace cryptoCurrency.services.Services.BitCoinTradeService
 {
@@ -8,6 +9,10 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
     {
         void SetKey(string key);
 
-        Task<IDictionary<string, decimal>> getBalanceAsync();
+        void SetCryptoCurrencyTypeEnum(EnumCryptoCurrency.EnumCryptoCurrencyType enumType);
+
+        Task<IDictionary<string, decimal>> GetBalanceAsync();
+
+        Task<IDictionary<string, Object>> GetLastOrderAsync();
     }
 }
