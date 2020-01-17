@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "cryptoCurrency.worker": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
