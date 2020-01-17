@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {}
+    "C:\\Projects\\crypCurrencyBot\\cryptoCurrency\\cryptoCurrency.core\\cryptoCurrency.core.csproj": {}
   },
   "projects": {
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
+    "C:\\Projects\\crypCurrencyBot\\cryptoCurrency\\cryptoCurrency.core\\cryptoCurrency.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
+        "projectUniqueName": "C:\\Projects\\crypCurrencyBot\\cryptoCurrency\\cryptoCurrency.core\\cryptoCurrency.core.csproj",
         "projectName": "cryptoCurrency.core",
-        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
-        "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/",
+        "projectPath": "C:\\Projects\\crypCurrencyBot\\cryptoCurrency\\cryptoCurrency.core\\cryptoCurrency.core.csproj",
+        "packagesPath": "C:\\Users\\talles.valiatti\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\crypCurrencyBot\\cryptoCurrency\\cryptoCurrency.core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/Users/tallesvaliatti/.config/NuGet/NuGet.Config"
+          "C:\\Users\\talles.valiatti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -68,7 +67,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -5,7 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tasks\" />
     <Folder Include="Tasks\TaskAwaitToBuy\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,6 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
 
         bool DecideIfShouldSell();
 
-        Task<bool> DecideIfShouldBuy();
+        bool DecideIfShouldBuy();
     }
 }

@@ -11,6 +11,6 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
     {
         void SetCryptoCurrencyType(EnumCryptoCurrency.EnumCryptoCurrencyType enumType);
 
-        Task<IEnumerable<IEnumerable<long>>> GetLast48HPrice();
+        IEnumerable<Object> GetLast24HPricePerMin();
     }
 }
