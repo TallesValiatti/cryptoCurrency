@@ -1,23 +1,11 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{CA0B6243-8359-412F-B422-B910AFBDE2A8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.worker/appsettings.json">
-    <Files>
-      <File FileName="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" Line="95" Column="1" />
-      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" Line="28" Column="68" />
-      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/ICryptoCurrencyService.cs" Line="14" Column="44" />
-      <File FileName="cryptoCurrency.worker/appsettings.json" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="cryptoCurrency" expanded="True">
-            <Node name="cryptoCurrency.services" expanded="True">
-              <Node name="Services" expanded="True">
-                <Node name="CryptoCurrencyService" expanded="True" />
-                <Node name="DecisonMakerService" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="cryptoCurrency.worker" expanded="True">
-              <Node name="appsettings.json" selected="True" />
+            <Node name="Solution Items" expanded="True">
+              <Node name="/Users/tallesvaliatti/Projects/cryptoCurrency/README.txt" selected="True" />
             </Node>
           </Node>
         </State>
