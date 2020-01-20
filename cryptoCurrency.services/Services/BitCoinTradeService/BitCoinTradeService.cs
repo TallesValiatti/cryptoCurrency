@@ -21,6 +21,7 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
         private EnumCryptoCurrency.EnumCryptoCurrencyType _enumCryptoCurrencyType;
         private decimal _OrderValue;
         private decimal _percentBuyOrderLimit;
+        private decimal _percentSellOrderLimit;
         #endregion
 
         #region methods
@@ -30,6 +31,10 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
             this._logger = logger;
         }
 
+        public decimal GetBalanceOfCryptoCurrency()
+        {
+            return GetBalance()[_enumCryptoCurrencyType.ToString()];
+        }
         public  IDictionary<string, decimal> GetBalance()
         {
             GetBalanceAsyncReturn objResult = null;
@@ -169,6 +174,35 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
 
             return objReturn;
         }
+        
+        
+        public IDictionary<string,Object> ExecuteSellOrder(decimal unitPrice, decimal amount, decimal requestPrice)
+        {
+            IDictionary<string, Object> objReturn = new Dictionary<string, object>();
+
+            try
+            {
+                _logger.LogInformation("Execute sell Order - {time}", DateTimeOffset.Now);
+
+                var objResult =  ExecutGeneriOrder("sell", (float)unitPrice, (float)amount, (float)requestPrice);
+                objReturn.Add("id", objResult.Data.Id);
+                objReturn.Add("code", objResult.Data.Code);
+                objReturn.Add("type", objResult.Data.Type);
+                objReturn.Add("unit_price", objResult.Data.UnitPrice);
+                objReturn.Add("pair", objResult.Data.Pair);
+                objReturn.Add("amount", objResult.Data.Amount);
+            }
+            catch (HttpRequestException httpex)
+            {
+                throw new CoreException(httpex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new CoreException(ex.Message);
+            }
+
+            return objReturn;
+        }
 
         private ExecuteGenericOrderReturn ExecutGeneriOrder(string OrderType, float unitPrice, float amount, float requestPrice)
         {
@@ -278,7 +312,6 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
             List<Dictionary<string, Object>> objReturn = new List<Dictionary<string, Object>>();
             try
             {
-
                 var objBookOrders = GetBookOrders();
 
                 foreach (var item in objBookOrders.Data.Buying)
@@ -307,16 +340,19 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
 
         public IEnumerable<IDictionary<string, Object>> GetBookSellOrders()
         {
-            _logger.LogInformation("Get Book Buy Orders- {time}", DateTimeOffset.Now);
-            IEnumerable<IDictionary<string, Object>> objReturn = new List<Dictionary<string, Object>>();
+            _logger.LogInformation("Get Book sell Orders- {time}", DateTimeOffset.Now);
+            List<Dictionary<string, Object>> objReturn = new List<Dictionary<string, Object>>();
             try
             {
                 var objBookOrders = GetBookOrders();
-                IDictionary<string, Object> dict = new Dictionary<string, Object>();
+
                 foreach (var item in objBookOrders.Data.Selling)
                 {
+                    var dict = new Dictionary<string, Object>();
+                    dict.Add("id", (string)item.Id);
                     dict.Add("amount", (decimal)item.Amount);
                     dict.Add("UnitPrice", (decimal)item.UnitPrice);
+                    objReturn.Add(dict);
                 }
             }
             catch (HttpRequestException httpex)
@@ -349,11 +385,21 @@ namespace cryptoCurrency.services.Services.BitCoinTradeService
         public bool canIncreaseOrderBuyPrice(decimal firstPrice, decimal currentPrice)
         {
             return currentPrice >= ((decimal)1 + _percentBuyOrderLimit/(decimal)100) * firstPrice ? false : true;
+        
+        }  
+        public bool canDecreaseOrderSellPrice(decimal firstPrice, decimal currentPrice)
+        {
+            return currentPrice >= ((decimal)1 + _percentSellOrderLimit / (decimal)100) * firstPrice ? false : true;
         }
 
         public void SetPercentBuyOrderLimit(decimal percent)
         {
             this._percentBuyOrderLimit = percent;
+        } 
+        
+        public void SetPercentSellOrderLimit(decimal percent)
+        {
+            this._percentSellOrderLimit = percent;
         }
 
         public decimal GetOrderValue() { return _OrderValue; }

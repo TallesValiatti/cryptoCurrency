@@ -78,6 +78,9 @@ namespace cryptoCurrency.tasks.Tasks
                 // set the Percent Buy Order Limit
                 _bitCoinTradeService.SetPercentBuyOrderLimit((decimal)_genericService.getObjectFromDynamic("SetPercentBuyOrderLimit", objData));
 
+                // set the Percent sell Order Limit
+                _bitCoinTradeService.SetPercentSellOrderLimit((decimal)_genericService.getObjectFromDynamic("SetPercentSellOrderLimit", objData));
+
                 // set the private key of notification service
                 _notificationService.SetKey((string)_genericService.getObjectFromDynamic("NotificationKey", objData));
 
@@ -100,6 +103,9 @@ namespace cryptoCurrency.tasks.Tasks
 
                 // set the crypto Currency type
                 _decisionMakerService.SetCryptoCurrencyTypeEnum(enumType);
+
+                // set the values to sell
+                _decisionMakerService.SetPercentToSell((decimal)_genericService.getObjectFromDynamic("lowToSell", objData), (decimal)_genericService.getObjectFromDynamic("highToSell", objData));
 
                 // set the crypto Currency type
                 _bitCoinTradeService.SetCryptoCurrencyTypeEnum(enumType);

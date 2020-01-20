@@ -3,13 +3,16 @@ using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using cryptoCurrency.core.Enums;
+using cryptoCurrency.core.Exceptions;
 using cryptoCurrency.services.Services.BitCoinTradeService;
 using cryptoCurrency.services.Services.CryptoCurrencyService;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 using static cryptoCurrency.core.Enums.EnumBotState;
 using static cryptoCurrency.core.Enums.EnumCryptoCurrency;
 using static cryptoCurrency.core.Enums.EnumOrderStatus;
+using cryptoCurrency.core.Enums;
 
 namespace cryptoCurrency.services.Services.DecisonMakerService
 {
@@ -20,6 +23,9 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
         private EnumCryptoCurrencyType _enumCryptoCurrencyType;
         private readonly ILogger<DecisionMakerService> _logger;
         private readonly ICryptoCurrencyService _cryptoCurrencyService;
+        private decimal _highPercentToSell;
+        private decimal _lowPercentToSell;
+        private IMemoryCache _cache;
         #endregion
 
         #region methods
@@ -30,7 +36,7 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
         {
             _bitCoinTradeService = bitCoinTradeService;
             _logger = logger;
-            _cryptoCurrencyService = cryptoCurrencyService; 
+            _cryptoCurrencyService = cryptoCurrencyService;
         }
 
         public EnumBotStateType DecideWhichStateToGo()
@@ -100,9 +106,53 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
             _enumCryptoCurrencyType = enumType;
         }
 
+        public void SetPercentToSell(decimal low, decimal high)
+        {
+            if (low >= (decimal)100 || low <= (decimal)0.0)
+                throw new CoreException("Low value must be between 0 and 100");
+            if (high >= (decimal)100 || high <= (decimal)0.0)
+                throw new CoreException("Low value must be between 0 and 100");
+
+            this._lowPercentToSell = low;
+            this._highPercentToSell= high;
+
+        }
         public bool DecideIfShouldSell()
         {
-            throw new NotImplementedException();
+            //todo: remover
+            return true;
+
+            //get the prices of last 24h
+            var pricesLast24H = _cryptoCurrencyService.GetLast24HPricePerMin();
+
+            // get the last order value
+            var lastOrder = _bitCoinTradeService.GetLastOrder();
+
+            //verify if the last order is: status: executedcompletly and type:buy
+
+            if (((string)lastOrder["type"]) != "buy")
+                throw new CoreException("To try to sell, the type of last order must be 'buy'.");
+            if (((string)lastOrder["status"]) != EnumOrderStatusType.executed_completely.ToString())
+                throw new CoreException("To try to sell, the status of last order must be 'executed_completely'.");
+
+            //unit price
+            var price = (decimal)lastOrder["UnitPrice"];
+
+            //Number of spots
+            var X = 2;
+
+            //get the last X values 
+            var lastValues = pricesLast24H.ToList().OrderBy(x => ((decimal)((JArray)x)[0])).Skip(pricesLast24H.Count() - X);
+
+            //sell if the last X values are greater then high sell price (price * highSellValue)
+            if (lastValues.All(x => ((decimal)((JArray)x)[1]) >= price * (1 + _highPercentToSell / 100)))
+                return true;
+            
+            //sell if the last X values are lower then low sell price (price * highSellValue)
+            if (lastValues.All(x => ((decimal)((JArray)x)[1]) <= price * (1 - _lowPercentToSell/ 100)))
+                return true;
+
+            return false;
         }
 
         public  bool DecideIfShouldBuy()

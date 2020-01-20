@@ -38,7 +38,10 @@ namespace cryptoCurrency.worker
                     NotificationKey = _config.GetValue<string>("data:NotificationKey"),
                     EnumCryptoCurrencyType = _config.GetValue<string>("data:EnumCryptoCurrencyType"),
                     BuyValueOrder = _config.GetValue<decimal>("data:BuyValueOrder"),
-                    SetPercentBuyOrderLimit = _config.GetValue<decimal>("data:SetPercentBuyOrderLimit")
+                    SetPercentBuyOrderLimit = _config.GetValue<decimal>("data:SetPercentBuyOrderLimit"),
+                    lowToSell = _config.GetValue<decimal>("data:lowToSell"),
+                    highToSell = _config.GetValue<decimal>("data:highToSell"),
+                    SetPercentSellOrderLimit = _config.GetValue<decimal>("data:SetPercentSellOrderLimit")
                 };
 
                 //main tasks

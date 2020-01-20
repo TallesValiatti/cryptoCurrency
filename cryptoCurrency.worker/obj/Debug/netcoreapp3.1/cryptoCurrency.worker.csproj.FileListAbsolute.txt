@@ -94,3 +94,4 @@ C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.worker\obj\Debug\netco
 C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.worker\obj\Debug\netcoreapp3.1\cryptoCurrency.worker.csproj.CopyComplete
 C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.worker\obj\Debug\netcoreapp3.1\cryptoCurrency.worker.dll
 C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.worker\obj\Debug\netcoreapp3.1\cryptoCurrency.worker.pdb
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.worker\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
