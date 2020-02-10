@@ -35,7 +35,7 @@ namespace cryptoCurrency.services.Services.NotifcationService
             ErrorNotificationOnSlack(message);
         }
 
-        private void ErrorNotificationOnSlack(string message)
+        private void SendMessageToSlack(string msg)
         {
             try
             {
@@ -43,15 +43,27 @@ namespace cryptoCurrency.services.Services.NotifcationService
 
                 var client = new SlackClient(urlWithAccessToken);
 
-                var msg = DateTime.Now.ToString("dd/MM/yyyy HH:mm") + " - ERROR\n" + message;
-
                 client.PostMessage(text: msg);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //pass
                 var a = 1;
             }
+        }
+
+        private void ErrorNotificationOnSlack(string message)
+        {
+            var msg = DateTime.Now.ToString("dd/MM/yyyy HH:mm") + " - ERROR\n" + message;
+
+            SendMessageToSlack(msg);
+        }
+
+        public void RegularNotification(string message)
+        {
+            var msg = DateTime.Now.ToString("dd/MM/yyyy HH:mm") + " \n" + message;
+
+            SendMessageToSlack(msg);
         }
 
         public void SetKey(string Key)
@@ -62,6 +74,15 @@ namespace cryptoCurrency.services.Services.NotifcationService
             _logger.LogInformation("Notification key - {time}", DateTimeOffset.Now);
             this._key = Key;
         }
+
+        public void BotIsAliveNotification()
+        {
+            if (string.IsNullOrEmpty(_key))
+                return;
+
+            SendMessageToSlack("BOT IS ALIVE!");
+        }
+
         #endregion
 
         #region Slack Private classes

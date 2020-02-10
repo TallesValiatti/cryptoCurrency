@@ -1,18 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptoCurrency.worker", "cryptoCurrency.worker\cryptoCurrency.worker.csproj", "{CA0B6243-8359-412F-B422-B910AFBDE2A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cryptoCurrency.worker", "cryptoCurrency.worker\cryptoCurrency.worker.csproj", "{CA0B6243-8359-412F-B422-B910AFBDE2A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptoCurrency.services", "cryptoCurrency.services\cryptoCurrency.services.csproj", "{030310C8-67C5-4906-948D-9BA3C40AD062}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cryptoCurrency.services", "cryptoCurrency.services\cryptoCurrency.services.csproj", "{030310C8-67C5-4906-948D-9BA3C40AD062}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptoCurrency.tasks", "cryptoCurrency.tasks\cryptoCurrency.tasks.csproj", "{7D58C64D-C7A4-41FE-811B-099BB2CB8699}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cryptoCurrency.tasks", "cryptoCurrency.tasks\cryptoCurrency.tasks.csproj", "{7D58C64D-C7A4-41FE-811B-099BB2CB8699}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cryptoCurrency.core", "cryptoCurrency.core\cryptoCurrency.core.csproj", "{B84C9F87-3542-4775-AFD7-CA31A4A78C1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cryptoCurrency.core", "cryptoCurrency.core\cryptoCurrency.core.csproj", "{B84C9F87-3542-4775-AFD7-CA31A4A78C1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36156144-EC7E-425E-8079-F3782DE94AB2}"
 	ProjectSection(SolutionItems) = preProject
+		README = README
 		README.txt = README.txt
 	EndProjectSection
 EndProject
@@ -24,9 +25,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CA0B6243-8359-412F-B422-B910AFBDE2A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -77,5 +75,11 @@ Global
 		{B84C9F87-3542-4775-AFD7-CA31A4A78C1C}.Release|x64.Build.0 = Release|Any CPU
 		{B84C9F87-3542-4775-AFD7-CA31A4A78C1C}.Release|x86.ActiveCfg = Release|Any CPU
 		{B84C9F87-3542-4775-AFD7-CA31A4A78C1C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97DF0108-A622-45A3-B5ED-FFB3EB1330A4}
 	EndGlobalSection
 EndGlobal

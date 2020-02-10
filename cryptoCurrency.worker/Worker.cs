@@ -36,11 +36,13 @@ namespace cryptoCurrency.worker
                     TradeKey = _config.GetValue<string>("data:TradeKey"),
                     ThreadTime = _config.GetValue<long>("data:ThreadTime"),
                     NotificationKey = _config.GetValue<string>("data:NotificationKey"),
-                    EnumCryptoCurrencyType = _config.GetValue<string>("data:EnumCryptoCurrencyType")
+                    EnumCryptoCurrencyType = _config.GetValue<string>("data:EnumCryptoCurrencyType"),
+                    BuyValueOrder = _config.GetValue<decimal>("data:BuyValueOrder"),
+                    SetPercentBuyOrderLimit = _config.GetValue<decimal>("data:SetPercentBuyOrderLimit")
                 };
 
                 //main tasks
-                await _mainTask.ExecuteAsync(objData);
+                await Task.Run(() => _mainTask.Execute(objData)); 
 
                 //_logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay((int)objData.ThreadTime, stoppingToken);

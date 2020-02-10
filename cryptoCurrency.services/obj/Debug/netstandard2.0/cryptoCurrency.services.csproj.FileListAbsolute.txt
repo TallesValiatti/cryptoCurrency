@@ -9,3 +9,14 @@
 /Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/bin/Debug/netstandard2.0/cryptoCurrency.core.dll
 /Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/bin/Debug/netstandard2.0/cryptoCurrency.core.pdb
 /Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/obj/Debug/netstandard2.0/cryptoCurrency.services.csproj.CopyComplete
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\bin\Debug\netstandard2.0\cryptoCurrency.services.deps.json
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\bin\Debug\netstandard2.0\cryptoCurrency.services.dll
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\bin\Debug\netstandard2.0\cryptoCurrency.services.pdb
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\bin\Debug\netstandard2.0\cryptoCurrency.core.dll
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\bin\Debug\netstandard2.0\cryptoCurrency.core.pdb
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\obj\Debug\netstandard2.0\cryptoCurrency.services.csprojAssemblyReference.cache
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\obj\Debug\netstandard2.0\cryptoCurrency.services.AssemblyInfoInputs.cache
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\obj\Debug\netstandard2.0\cryptoCurrency.services.AssemblyInfo.cs
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\obj\Debug\netstandard2.0\cryptoCurrency.services.csproj.CopyComplete
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\obj\Debug\netstandard2.0\cryptoCurrency.services.dll
+C:\Projects\crypCurrencyBot\cryptoCurrency\cryptoCurrency.services\obj\Debug\netstandard2.0\cryptoCurrency.services.pdb

@@ -5,6 +5,6 @@ namespace cryptoCurrency.tasks.Tasks
 {
     public interface IMainTask
     {
-        Task ExecuteAsync(dynamic objData);
+        void Execute(dynamic objData);
     }
 }

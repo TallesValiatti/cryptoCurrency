@@ -10,6 +10,9 @@ using static cryptoCurrency.core.Enums.EnumCryptoCurrency;
 using cryptoCurrency.services.Services.DecisonMakerService;
 using cryptoCurrency.tasks.Tasks.TaskAwaitToBuy;
 using cryptoCurrency.services.Services.CryptoCurrencyService;
+using cryptoCurrency.tasks.Tasks.TaskBuy;
+using cryptoCurrency.tasks.Tasks.TaskSell;
+using cryptoCurrency.tasks.Tasks.TaskAwaitToSell;
 
 namespace cryptoCurrency.tasks.Tasks
 {
@@ -23,6 +26,10 @@ namespace cryptoCurrency.tasks.Tasks
         private readonly IDecisionMakerService _decisionMakerService;
         private readonly ITaskAwaitToBuy _awaitToBuyTask;
         private readonly ICryptoCurrencyService _cryptoCurrencyService;
+        private bool _notificateBotIsAlive;
+        private readonly ITaskBuy _buyTask;
+        private readonly ITaskSell _sellTask;
+        private readonly ITaskAwaitToSell _awaiToSellTask;
         #endregion
 
         #region methods
@@ -34,19 +41,28 @@ namespace cryptoCurrency.tasks.Tasks
             INotificationService notificationService,
             IDecisionMakerService decisionMakerService,
             ITaskAwaitToBuy awaitToBuyTask,
+            ITaskBuy BuyTask,
+            ITaskSell SellTask,
+            ITaskAwaitToSell awaiToSellTask,
             ICryptoCurrencyService  cryptoCurrencyService
             )
         {
+            _notificateBotIsAlive = true;
             this._logger = logger;
             this._bitCoinTradeService = bitCoinTradeService;
             this._genericService = genericService;
             this._notificationService = notificationService;
             this._decisionMakerService = decisionMakerService;
             this._awaitToBuyTask = awaitToBuyTask;
+            this._buyTask = BuyTask;
             this._cryptoCurrencyService = cryptoCurrencyService;
+            this._sellTask = SellTask;
+            this._awaiToSellTask = awaiToSellTask;
+
+
         }
 
-        public async Task ExecuteAsync(dynamic objData)
+        public void Execute(dynamic objData)
         {
             try
             {
@@ -59,8 +75,21 @@ namespace cryptoCurrency.tasks.Tasks
                 // set the private Key of the service BITCOIN TRADE
                 _bitCoinTradeService.SetKey((string)_genericService.getObjectFromDynamic("TradeKey", objData));
 
+                // set the Percent Buy Order Limit
+                _bitCoinTradeService.SetPercentBuyOrderLimit((decimal)_genericService.getObjectFromDynamic("SetPercentBuyOrderLimit", objData));
+
                 // set the private key of notification service
                 _notificationService.SetKey((string)_genericService.getObjectFromDynamic("NotificationKey", objData));
+
+                //set the buy value order
+                _bitCoinTradeService.SetOrderValue((decimal)_genericService.getObjectFromDynamic("BuyValueOrder", objData));
+
+                //Notificate bot is alive
+                if (_notificateBotIsAlive)
+                {   
+                    _notificationService.BotIsAliveNotification();
+                    _notificateBotIsAlive = false;
+                }
 
                 //Retrive the crypto currency type enum
                 EnumCryptoCurrencyType enumType;
@@ -68,6 +97,9 @@ namespace cryptoCurrency.tasks.Tasks
                 var canConvert = Enum.TryParse<EnumCryptoCurrencyType>((string)_genericService.getObjectFromDynamic("EnumCryptoCurrencyType", objData), out enumType);
                 if (!canConvert)
                     throw new CoreException("crypto currency not defined on enum: " + (string)_genericService.getObjectFromDynamic("EnumCryptoCurrencyType", objData));
+
+                // set the crypto Currency type
+                _decisionMakerService.SetCryptoCurrencyTypeEnum(enumType);
 
                 // set the crypto Currency type
                 _bitCoinTradeService.SetCryptoCurrencyTypeEnum(enumType);
@@ -80,10 +112,14 @@ namespace cryptoCurrency.tasks.Tasks
 
                 if (state == EnumBotState.EnumBotStateType.awaitToBuy)
                     _awaitToBuyTask.Execute();
-                    
+                else if (state == EnumBotState.EnumBotStateType.tryToBuy)
+                    _buyTask.Execute();
+                else if (state == EnumBotState.EnumBotStateType.awaitToSell)
+                    _awaiToSellTask.Execute();
+                else if (state == EnumBotState.EnumBotStateType.tryToSell)
+                    _sellTask.Execute();
 
-
-                // Ending task
+                // ************************************************ End TASK ***************************************
                 _logger.LogInformation("Ending main task - {time}", DateTimeOffset.Now);
             }
             catch (CoreException cex)

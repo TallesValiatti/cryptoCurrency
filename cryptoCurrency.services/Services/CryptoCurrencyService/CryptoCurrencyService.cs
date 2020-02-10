@@ -25,12 +25,12 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
             this._logger = logger;
         }
 
-        public async Task<IEnumerable<IEnumerable<long>>> GetLast48HPrice()
+        public  IEnumerable<Object> GetLast24HPricePerMin()
         {
             try
             {
                 _logger.LogInformation("Get GetLast24HPrice - {time}", DateTimeOffset.Now);
-                var prices = await GetPrices(2);
+                var prices = GetPrices(1);
                 return prices;
             }
             catch(HttpRequestException ex)
@@ -43,7 +43,7 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
             }
         }
         
-        private async Task<IEnumerable<IEnumerable<long>>> GetPrices(int days)
+        private IEnumerable<Object> GetPrices(int days)
         {
             if(days > 89)
             {
@@ -54,7 +54,9 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
             var URL = "https://api.coingecko.com/api/v3/coins/"+__cryptoCurrentyTypeStr+"/market_chart?vs_currency=brl&days=" + days.ToString();
             HttpClient request = new HttpClient();
             
-            string strResult = await request.GetStringAsync(URL);
+            var Task = request.GetStringAsync(URL);
+            Task.Wait();
+            string strResult = Task.Result;
 
             objResult = JsonConvert.DeserializeObject<GetLast24HPriceReturn>(strResult);
             return objResult.Prices;
@@ -85,7 +87,7 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
         private class GetLast24HPriceReturn
         {
             [JsonProperty("prices")]
-            public IEnumerable<IEnumerable<long>> Prices { get; set; }
+            public IEnumerable<Object> Prices { get; set; }
         }
 
         #endregion

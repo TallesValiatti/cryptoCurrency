@@ -1,21 +1,31 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{CA0B6243-8359-412F-B422-B910AFBDE2A8}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.tasks/Tasks/TaskAwaitToSell/TaskAwaitToSell.cs">
+    <Files>
+      <File FileName="cryptoCurrency.worker/appsettings.json" Line="15" Column="36" />
+      <File FileName="cryptoCurrency.tasks/Tasks/MainTask.cs" Line="128" Column="69" />
+      <File FileName="cryptoCurrency.tasks/Tasks/TaskAwaitToSell/TaskAwaitToSell.cs" Line="1" Column="1" NotebookId="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="cryptoCurrency" expanded="True">
-            <Node name="Solution Items" expanded="True">
-              <Node name="/Users/tallesvaliatti/Projects/cryptoCurrency/README.txt" selected="True" />
+            <Node name="cryptoCurrency.tasks" expanded="True">
+              <Node name="Tasks" expanded="True">
+                <Node name="TaskAwaitToSell" expanded="True">
+                  <Node name="TaskAwaitToSell.cs" selected="True" />
+                </Node>
+              </Node>
             </Node>
+            <Node name="cryptoCurrency.worker" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
-    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
-    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
+    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" column="0" endLine="0" endColumn="0" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
+    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" column="0" endLine="0" endColumn="0" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
+    <Watch file="../../../cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="94" column="0" endLine="0" endColumn="0" offsetX="-1" offsetY="-1" expression="dataUltimo" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
