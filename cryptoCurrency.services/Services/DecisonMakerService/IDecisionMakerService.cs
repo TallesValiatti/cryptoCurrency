@@ -8,6 +8,7 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
     public interface IDecisionMakerService
     {
         void SetCryptoCurrencyTypeEnum(EnumCryptoCurrency.EnumCryptoCurrencyType enumType);
+        void SetPercentToSell(decimal low, decimal high);
 
         EnumBotStateType  DecideWhichStateToGo();
 

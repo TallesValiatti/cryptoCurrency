@@ -32,6 +32,8 @@ namespace cryptoCurrency.tasks.Tasks.TaskBuy
         }
         public void Execute()
         {
+            var stepsToWait = 7;
+
             //Get last order
             var lastOrder = _bitCointTradeService.GetLastOrder();
 
@@ -81,7 +83,7 @@ namespace cryptoCurrency.tasks.Tasks.TaskBuy
             {
                 //get my last order and verify id the order buy was executed
                 lastOrderAfterSomeTime = _bitCointTradeService.GetLastOrder();
-                if (string.Compare(lastOrderAfterSomeTime["status"].ToString(), EnumOrderStatusType.executed_completely.ToString()) == 0)
+                if (string.Compare(lastOrderAfterSomeTime["status"].ToString(), EnumOrderStatusType.executed_completely.ToString()) == 0 && string.Compare( lastOrderAfterSomeTime["type"].ToString(), "buy") == 0)
                     break;
 
                 //get the greatest book buy order
@@ -95,7 +97,7 @@ namespace cryptoCurrency.tasks.Tasks.TaskBuy
                     {
                         //get my last order and verify id the order buy was executed
                         lastOrderAfterSomeTime = _bitCointTradeService.GetLastOrder();
-                        if (string.Compare(lastOrderAfterSomeTime["status"].ToString(), EnumOrderStatusType.executed_completely.ToString()) == 0)
+                        if (string.Compare(lastOrderAfterSomeTime["status"].ToString(), EnumOrderStatusType.executed_completely.ToString()) == 0 && string.Compare(lastOrderAfterSomeTime["type"].ToString(), "buy") == 0)
                             break;
 
                         //cancel the order
@@ -112,7 +114,7 @@ namespace cryptoCurrency.tasks.Tasks.TaskBuy
                         _logger.LogInformation("Cannot increase the value" + " - {time} ", DateTimeOffset.Now);
                         //cancel the order
                         _bitCointTradeService.CancelOrder(lastOrderAfterSomeTime["id"].ToString());
-                        break;
+                        continue;
                     }
                 }
                 else
@@ -133,14 +135,23 @@ namespace cryptoCurrency.tasks.Tasks.TaskBuy
                         var Order = _bitCointTradeService.ExecuteBuyOrder(orderUnitPrice, amount, requestPrice);
                     }
                 }
-                    
+
+
+                //wait to avoid http 429
+                if (stepsToWait == 0)
+                {
+                    stepsToWait = 7;
+                    Thread.Sleep(5000);
+                }
+
+                stepsToWait--;
             }
 
             //get my last order and verify id the order buy was executed
             lastOrderAfterSomeTime = _bitCointTradeService.GetLastOrder();
-            if (string.Compare(lastOrderAfterSomeTime["status"].ToString(), EnumOrderStatusType.executed_completely.ToString()) == 0)
+            if (string.Compare(lastOrderAfterSomeTime["status"].ToString(), EnumOrderStatusType.executed_completely.ToString()) == 0 && string.Compare(lastOrderAfterSomeTime["type"].ToString(), "buy") == 0)
             {
-                var msg = "Bougth\nUnit Value: R$ " + lastOrderAfterSomeTime["UnitPrice"] + "\nRequested: " + lastOrderAfterSomeTime["RequestedAmount"];
+                var msg = "Bougth\nUnit Value: R$ " + lastOrderAfterSomeTime["UnitPrice"] + "\nRequested: " + lastOrderAfterSomeTime["RequestedAmount"] + "\nTotal value: " + lastOrderAfterSomeTime["TotalPrice"];
                 _logger.LogInformation(msg + " - {time} ", DateTimeOffset.Now);
                 _notificationService.RegularNotification(msg);
             }
