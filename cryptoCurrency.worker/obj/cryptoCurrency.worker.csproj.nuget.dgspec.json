@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj": {}
+    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj": {}
   },
   "projects": {
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
+    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
+        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
         "projectName": "cryptoCurrency.core",
-        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
+        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
         "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/",
+        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -72,14 +72,14 @@
         }
       }
     },
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj": {
+    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
+        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
         "projectName": "cryptoCurrency.services",
-        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
+        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
         "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/obj/",
+        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -96,8 +96,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
-                "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj"
+              "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
+                "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj"
               }
             }
           }
@@ -136,14 +136,14 @@
         }
       }
     },
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj": {
+    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj",
+        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj",
         "projectName": "cryptoCurrency.tasks",
-        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj",
+        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj",
         "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/obj/",
+        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -160,8 +160,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj": {
-                "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj"
+              "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj": {
+                "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj"
               }
             }
           }
@@ -200,14 +200,14 @@
         }
       }
     },
-    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj": {
+    "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj",
+        "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj",
         "projectName": "cryptoCurrency.worker",
-        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj",
+        "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.worker/cryptoCurrency.worker.csproj",
         "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.worker/obj/",
+        "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.worker/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -224,8 +224,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj": {
-                "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj"
+              "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj": {
+                "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/cryptoCurrency.tasks.csproj"
               }
             }
           }

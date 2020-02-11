@@ -13,6 +13,12 @@ using static cryptoCurrency.core.Enums.EnumBotState;
 using static cryptoCurrency.core.Enums.EnumCryptoCurrency;
 using static cryptoCurrency.core.Enums.EnumOrderStatus;
 using cryptoCurrency.core.Enums;
+using System.Net.Http;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http.Headers;
+using System.Collections.Generic;
 
 namespace cryptoCurrency.services.Services.DecisonMakerService
 {
@@ -25,6 +31,7 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
         private readonly ICryptoCurrencyService _cryptoCurrencyService;
         private decimal _highPercentToSell;
         private decimal _lowPercentToSell;
+        private string URLdecisonMaker;
         private IMemoryCache _cache;
         #endregion
 
@@ -52,8 +59,13 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
             //Get the last order of crypto currency
             var lastOrder = _bitCoinTradeService.GetLastOrder();
 
+            if (lastOrder.Count() == 0)
+            {
+                return EnumBotStateType.awaitToBuy;
+            }
+
             // ***************************************************   State -> awaitTosell  ***************************************************
-            if (
+            else if (
                         amount[_enumCryptoCurrencyType.ToString()] != (decimal)0 && //Amount remain on bit coin trade
                         (
                             String.Compare(lastOrder["status"].ToString(), EnumOrderStatusType.canceled.ToString()) == 0 || // status of last order equal to canceled
@@ -117,6 +129,7 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
             this._highPercentToSell= high;
 
         }
+
         public bool DecideIfShouldSell()
         {
             //todo: remover
@@ -157,26 +170,102 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
 
         public  bool DecideIfShouldBuy()
         {
-            //todo:remove
-            return true;
+            try
+            {
+                var token = authDecisionMaker();
 
-            var pricesLast24H = _cryptoCurrencyService.GetLast24HPricePerMin();
+                var result = predictDecisionMaker(token);
 
-            //get the last 2h
-            var pricesLast2h = pricesLast24H.Skip(pricesLast24H.Count() - 120);
+                return result;
+            }
+            catch (HttpRequestException httpex)
+            {
+                throw new CoreException(httpex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new CoreException(ex.Message);
+            }
+        }
 
-            var firstGroupPriceMean = pricesLast2h.Take(60).Select(x => ((decimal)((JArray)x)[1])).Sum()/(decimal)60;
-            var SecondGroupPriceMean = pricesLast2h.Skip(60).Select(x => ((decimal)((JArray)x)[1])).Sum()/(decimal)60;
+        public string authDecisionMaker()
+        {
+            HttpClient req = new HttpClient();
+            var body = new
+            {
+                user = "talles",
+                password = "123"
+            };
 
-            //2%
-            var limitToBuy = firstGroupPriceMean * (decimal)1.02;
+            var URL = URLdecisonMaker + "/auth";
 
-            return SecondGroupPriceMean >= limitToBuy ? true:false;
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(body), System.Text.Encoding.UTF8, "application/json");
+            var taskPost = req.PostAsync(URL, content);
+            taskPost.Wait();
+
+            var result = taskPost.Result;
+
+            result.EnsureSuccessStatusCode();
+
+            var taskRead = result.Content.ReadAsStringAsync();
+            taskRead.Wait();
+
+            var contentBody = JsonConvert.DeserializeObject<authDecisionMakerResponse>(taskRead.Result);
+
+            return contentBody.token;
+        }
+
+
+        public bool predictDecisionMaker(string token)
+        {
+            var data = new List<double>() { 1080.0, 1100.0, 1000.1, 1000.0, 1010.0, 1000.1, 1000.0, 1090.0, 1105.1, 1140.0, 1140.0 };
+
+            HttpClient req = new HttpClient();
+            var body = new
+            {
+                data = data
+            };
+
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(body), System.Text.Encoding.UTF8, "application/json");
+            var taskPost = req.PostAsync( URLdecisonMaker + "/predict?token=" + token, content);
+                taskPost.Wait();
+
+            var result = taskPost.Result;
+
+            result.EnsureSuccessStatusCode();
+
+            var taskRead = result.Content.ReadAsStringAsync();
+
+            taskRead.Wait();
+
+            var contentBody = JsonConvert.DeserializeObject<returnPredict>(taskRead.Result);
+
+            Console.WriteLine(contentBody.result);
+            return contentBody.result;
+        }
+
+
+        public void SetURLdecisonMaker(string URL)
+        {
+            if (string.IsNullOrEmpty(URL))
+                throw new CoreException("URL of decision make must be not null");
+
+            this.URLdecisonMaker = URL;
         }
         #endregion
 
         #region conversion Class
-        
+
+        private class authDecisionMakerResponse
+        {
+            public string token { get; set; }
+        }
+
+        class returnPredict
+        {
+            public bool result { get; set; }
+        }
+
         #endregion
     }
 }

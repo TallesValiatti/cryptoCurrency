@@ -41,7 +41,8 @@ namespace cryptoCurrency.worker
                     SetPercentBuyOrderLimit = _config.GetValue<decimal>("data:SetPercentBuyOrderLimit"),
                     lowToSell = _config.GetValue<decimal>("data:lowToSell"),
                     highToSell = _config.GetValue<decimal>("data:highToSell"),
-                    SetPercentSellOrderLimit = _config.GetValue<decimal>("data:SetPercentSellOrderLimit")
+                    SetPercentSellOrderLimit = _config.GetValue<decimal>("data:SetPercentSellOrderLimit"),
+                    URLdecisonMaker = _config.GetValue<string>("data:URLdecisonMaker")
                 };
 
                 //main tasks

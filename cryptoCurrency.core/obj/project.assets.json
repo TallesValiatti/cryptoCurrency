@@ -895,11 +895,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
+      "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
       "projectName": "cryptoCurrency.core",
-      "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
+      "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj",
       "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-      "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/obj/",
+      "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

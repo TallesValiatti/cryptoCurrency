@@ -104,6 +104,9 @@ namespace cryptoCurrency.tasks.Tasks
                 // set the crypto Currency type
                 _decisionMakerService.SetCryptoCurrencyTypeEnum(enumType);
 
+                // set the crypto Currency URL decision maker
+                _decisionMakerService.SetURLdecisonMaker((string)_genericService.getObjectFromDynamic("URLdecisonMaker", objData));
+
                 // set the values to sell
                 _decisionMakerService.SetPercentToSell((decimal)_genericService.getObjectFromDynamic("lowToSell", objData), (decimal)_genericService.getObjectFromDynamic("highToSell", objData));
 

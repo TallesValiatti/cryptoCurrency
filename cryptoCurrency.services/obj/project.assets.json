@@ -942,11 +942,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
+      "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
       "projectName": "cryptoCurrency.services",
-      "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
+      "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
       "packagesPath": "/Users/tallesvaliatti/.nuget/packages/",
-      "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/obj/",
+      "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -963,8 +963,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
-              "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj"
+            "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
+              "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj"
             }
           }
         }
@@ -1002,13 +1002,5 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency.services/obj/cryptoCurrency.services.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
