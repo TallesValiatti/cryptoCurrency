@@ -1,0 +1,60 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
+    "projectName": "cryptoCurrency.services",
+    "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/cryptoCurrency.services.csproj",
+    "outputPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netstandard2.0"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netstandard2.0": {
+        "projectReferences": {
+          "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj": {
+            "projectPath": "/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.core/cryptoCurrency.core.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netstandard2.0": {
+      "dependencies": {
+        "Microsoft.Extensions.Caching.Abstractions": {
+          "target": "Package",
+          "version": "[3.1.1, )"
+        },
+        "NETStandard.Library": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.0.3, )",
+          "autoReferenced": true
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true,
+      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+    }
+  }
+}

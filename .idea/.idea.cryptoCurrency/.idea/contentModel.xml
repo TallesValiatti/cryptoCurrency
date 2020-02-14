@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_cryptoCurrency.-207051923.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="cryptoCurrency.core" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="cryptoCurrency.core.csproj" t="IncludeRecursive" />
+        <e p="Enums" t="Include">
+          <e p="EnumBotState.cs" t="Include" />
+          <e p="EnumCryptoCurrency.cs" t="Include" />
+          <e p="EnumOrderStatus.cs" t="Include" />
+        </e>
+        <e p="Exceptions" t="Include">
+          <e p="CoreException.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="cryptoCurrency.core.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="cryptoCurrency.services" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="cryptoCurrency.services.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="cryptoCurrency.services.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="BitCoinTradeService" t="Include">
+            <e p="BitCoinTradeService.cs" t="Include" />
+            <e p="IBitCoinTradeService.cs" t="Include" />
+          </e>
+          <e p="CryptoCurrencyService" t="Include">
+            <e p="CryptoCurrencyService.cs" t="Include" />
+            <e p="ICryptoCurrencyService.cs" t="Include" />
+          </e>
+          <e p="DecisonMakerService" t="Include">
+            <e p="DecisionMakerService.cs" t="Include" />
+            <e p="IDecisionMakerService.cs" t="Include" />
+          </e>
+          <e p="GenericServices" t="Include">
+            <e p="GenericService.cs" t="Include" />
+            <e p="IGenericService.cs" t="Include" />
+          </e>
+          <e p="NotifcationService" t="Include">
+            <e p="INotifcationService.cs" t="Include" />
+            <e p="NotifcationService.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="cryptoCurrency.sln" t="IncludeFlat" />
+      <e p="cryptoCurrency.tasks" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="cryptoCurrency.tasks.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="cryptoCurrency.tasks.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Tasks" t="Include">
+          <e p="IMainTask.cs" t="Include" />
+          <e p="MainTask.cs" t="Include" />
+          <e p="TaskAwaitToBuy" t="Include">
+            <e p="ITaskAwaitToBuy.cs" t="Include" />
+            <e p="TaskAwaitToBuy.cs" t="Include" />
+          </e>
+          <e p="TaskAwaitToSell" t="Include">
+            <e p="ITaskAwaitToSell.cs" t="Include" />
+            <e p="TaskAwaitToSell.cs" t="Include" />
+          </e>
+          <e p="TaskBuy" t="Include">
+            <e p="ITaskBuy.cs" t="Include" />
+            <e p="TaskBuy.cs" t="Include" />
+          </e>
+          <e p="TaskSell" t="Include">
+            <e p="ITaskSell.cs" t="Include" />
+            <e p="TaskSell.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="cryptoCurrency.worker" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="cryptoCurrency.worker.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="cryptoCurrency.worker.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Worker.cs" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="README" t="Include" />
+      <e p="README.txt" t="Include" />
+      <e p="Solution Items" t="Include" />
+    </e>
+  </component>
+</project>
