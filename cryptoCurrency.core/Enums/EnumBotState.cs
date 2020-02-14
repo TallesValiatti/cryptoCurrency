@@ -10,7 +10,6 @@ namespace cryptoCurrency.core.Enums
             awaitToSell = 2,
             tryToSell = 3,
             NoState = 4
-
         }
-     }
+    }
 }

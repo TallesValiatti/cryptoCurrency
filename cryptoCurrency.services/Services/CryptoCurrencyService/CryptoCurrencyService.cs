@@ -7,6 +7,8 @@ using System.Web;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace cryptoCurrency.services.Services.CryptoCurrencyService
 {
@@ -42,7 +44,52 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
                 throw new CoreException(ex.Message);
             }
         }
-        
+
+        public IEnumerable<decimal> GetLast11HPricePerHour()
+        {
+            try
+            {
+                _logger.LogInformation("Get GetLast11HPricePer - {time}", DateTimeOffset.Now);
+                var prices = GetPrices(1);
+
+                var pricesNormalized = splitValues(24, prices.ToList());
+
+                return pricesNormalized.Skip(13);
+            }
+            catch (HttpRequestException ex)
+            {
+                throw new CoreException(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                throw new CoreException(ex.Message);
+            }
+        }
+
+        private IEnumerable<decimal> splitValues(int numberOfSplits, IList<Object> serie)
+        {
+            var parts = new List<decimal>();
+
+            var n = (int)serie.Count() / numberOfSplits;
+
+            for (int i = 0; i < n; i = i + n)
+            {
+                decimal value = 0;
+
+                if (serie.Count() > i + numberOfSplits)
+                {
+                    value = Enumerable.Average(serie.Skip(i).Take(n).Select(p => ((decimal)((JArray)p)[0])));
+                }
+                else
+                {
+                    value = Enumerable.Average(serie.Skip(i + n).Select(p => ((decimal)((JArray)p)[0])));
+                }
+                
+                parts.Add(value);
+            }
+            return parts;
+        }
+
         private IEnumerable<Object> GetPrices(int days)
         {
             if(days > 89)
@@ -82,7 +129,6 @@ namespace cryptoCurrency.services.Services.CryptoCurrencyService
         #endregion
 
         #region return Classes
-
 
         private class GetLast24HPriceReturn
         {

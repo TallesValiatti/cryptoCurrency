@@ -12,7 +12,6 @@ using Newtonsoft.Json.Linq;
 using static cryptoCurrency.core.Enums.EnumBotState;
 using static cryptoCurrency.core.Enums.EnumCryptoCurrency;
 using static cryptoCurrency.core.Enums.EnumOrderStatus;
-using cryptoCurrency.core.Enums;
 using System.Net.Http;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
@@ -219,6 +218,8 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
         public bool predictDecisionMaker(string token)
         {
             var data = new List<double>() { 1080.0, 1100.0, 1000.1, 1000.0, 1010.0, 1000.1, 1000.0, 1090.0, 1105.1, 1140.0, 1140.0 };
+
+            var data2 = _cryptoCurrencyService.GetLast11HPricePerHour();
 
             HttpClient req = new HttpClient();
             var body = new

@@ -1,14 +1,9 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{CA0B6243-8359-412F-B422-B910AFBDE2A8}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs">
     <Files>
-      <File FileName="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" Line="174" Column="1" />
-      <File FileName="cryptoCurrency.tasks/Tasks/MainTask.cs" Line="133" Column="1" />
-      <File FileName="cryptoCurrency.worker/Worker.cs" Line="23" Column="1" />
-      <File FileName="cryptoCurrency.services/Services/BitCoinTradeService/BitCoinTradeService.cs" Line="225" Column="13" />
-      <File FileName="cryptoCurrency.services/Services/DecisonMakerService/IDecisionMakerService.cs" Line="18" Column="49" />
-      <File FileName="cryptoCurrency.tasks/Tasks/TaskAwaitToBuy/TaskAwaitToBuy.cs" Line="39" Column="1" />
-      <File FileName="cryptoCurrency.worker/appsettings.json" Line="18" Column="38" NotebookId="1" />
-      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" Line="54" Column="13" NotebookId="1" />
+      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" Line="65" Column="1" />
+      <File FileName="cryptoCurrency.services/Services/CryptoCurrencyService/ICryptoCurrencyService.cs" Line="16" Column="28" />
+      <File FileName="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" Line="157" Column="91" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,20 +12,12 @@
             <Node name="cryptoCurrency.services" expanded="True">
               <Node name="Services" expanded="True">
                 <Node name="BitCoinTradeService" expanded="True" />
-                <Node name="CryptoCurrencyService" expanded="True" />
-                <Node name="DecisonMakerService" expanded="True">
-                  <Node name="DecisionMakerService.cs" selected="True" />
+                <Node name="CryptoCurrencyService" expanded="True">
+                  <Node name="CryptoCurrencyService.cs" selected="True" />
                 </Node>
+                <Node name="DecisonMakerService" expanded="True" />
               </Node>
             </Node>
-            <Node name="cryptoCurrency.tasks" expanded="True">
-              <Node name="Tasks" expanded="True">
-                <Node name="TaskAwaitToBuy" expanded="True" />
-                <Node name="TaskAwaitToSell" expanded="True" />
-                <Node name="TaskBuy" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="cryptoCurrency.worker" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -45,9 +32,10 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.tasks/Tasks/TaskBuy/TaskBuy.cs" relfile="cryptoCurrency.tasks/Tasks/TaskBuy/TaskBuy.cs" line="35" column="1" />
-      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" relfile="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="174" column="1" />
-      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" relfile="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="193" column="1" />
-      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" relfile="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="221" column="1" />
+      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" relfile="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" line="61" column="1" />
+      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" relfile="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" line="65" column="1" />
+      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" relfile="cryptoCurrency.services/Services/CryptoCurrencyService/CryptoCurrencyService.cs" line="75" column="1" />
+      <Breakpoint file="/Users/tallesvaliatti/Projects/cryptoCurrency/cryptoCurrency/cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" relfile="cryptoCurrency.services/Services/DecisonMakerService/DecisionMakerService.cs" line="224" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
