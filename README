@@ -1,4 +1,4 @@
-as-> Bot to buy/sell crypto currency
+asas-> Bot to buy/sell crypto currency
 	- bitcoinTrade plattform (https://broker.bitcointrade.com.br)
 	- Integration with Slack for mobile notification
 	- .Net Core 3.1 Worker as template
