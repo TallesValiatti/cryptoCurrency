@@ -60,7 +60,6 @@ namespace cryptoCurrency.tasks.Tasks.TaskSell
                 //set the order ID
                 OrderId = Order["id"].ToString();
                 OrderPrice = Convert.ToDecimal(Order["unit_price"].ToString().Replace(",", "."), CultureInfo.InvariantCulture);
-
             }
             else
             {
@@ -69,7 +68,6 @@ namespace cryptoCurrency.tasks.Tasks.TaskSell
             }
 
             //_bitCointTradeService.CancelOrder(OrderId);
-
             //give some time to sell the order
             Thread.Sleep(5000);
 

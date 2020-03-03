@@ -11,6 +11,6 @@ namespace cryptoCurrency.core.Enums
             tryToSell = 3,
             NoState = 4
         }
-        
     }
 }
+

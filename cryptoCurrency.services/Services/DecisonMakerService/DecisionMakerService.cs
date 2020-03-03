@@ -214,7 +214,6 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
             return contentBody.token;
         }
 
-
         public bool predictDecisionMaker(string token)
         {
             var data = new List<double>() { 1080.0, 1100.0, 1000.1, 1000.0, 1010.0, 1000.1, 1000.0, 1090.0, 1105.1, 1140.0, 1140.0 };
@@ -244,7 +243,6 @@ namespace cryptoCurrency.services.Services.DecisonMakerService
             Console.WriteLine(contentBody.result);
             return contentBody.result;
         }
-
 
         public void SetURLdecisonMaker(string URL)
         {
